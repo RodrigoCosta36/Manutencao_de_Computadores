@@ -1,0 +1,362 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.font {
+    font-size: 14px;
+}
+
+/* Nome fixo estilizado */
+.fixed-name {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #000360, #000180);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    z-index: 1001; /* Ajustado para garantir que o nome esteja acima da navbar */
+}
+
+.fixed-name h2 {
+    margin: 0;
+}
+
+/* Navbar estilizada */
+.navbar {
+    background-color: #000180;
+    color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 40px; /* Ajuste para garantir que a navbar não seja sobreposta pelo nome fixo */
+    width: 100%;
+    z-index: 1000;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-list li {
+    margin-right: 20px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.portfolio-container {
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    padding: 5px;
+}
+
+.logo-container {
+    margin: 20px;
+}
+
+.logo-container img {
+    border-radius: 8%;
+    max-width: 25em;
+    height: auto;
+}
+
+.text-container {
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.secao4 {
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.secao4-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.secao4-div-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(33.33% - 40px);
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background-color: white;
+    transition: all 0.5s ease;
+}
+
+.secao4-div-card:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.secao4-div-card img {
+    width: 30%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.secao4-div-card h3 {
+    margin-bottom: 10px;
+}
+
+.secao4-div-card .valor {
+    font-size: 24px;
+    color: #ff8000; /* Cor mais chamativa, você pode ajustar conforme preferir */
+    font-weight: bold; /* Deixa o texto em negrito para destaque */
+    margin-top: 5px; /* Espaço entre o título e o valor */
+}
+
+
+.footer {
+    background-color: #000180;
+    color: #ffffff;
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.footer a {
+    color: #ffffff;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-icons {
+    font-size: 30px;
+}
+
+.footer-icons a {
+    margin-right: 10px;
+}
+
+.footer-contact {
+    flex: 1;
+    font-size: 12px;
+    margin-right: 12px;
+}
+
+.pagamento {
+    background-color: #fefefe;
+    padding: 20px;
+    text-align: center;
+}
+
+.pagamento h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.pagamento p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.pagamento ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pagamento li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.pagamento i {
+    margin-right: 5px;
+}
+
+
+/* Media queries para layout responsivo */
+@media (max-width: 768px) {
+    /* Estilos para telas menores */
+
+    body {
+        font-family: 'Helvetica', sans-serif;
+    }
+
+    .nav-list {
+        display: none; /* Oculta a lista por padrão em telas maiores */
+        flex-direction: column; /* Ajusta a direção da lista para coluna */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to bottom, #000360, #000180);
+    }
+
+    .nav-list.show {
+        display: flex; /* Exibe a lista quando a classe show é aplicada */
+    }
+
+    .nav-list li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .image-effect {
+        flex-basis: calc(50% - 20px);
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-list li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .image-effect {
+        flex-basis: calc(50% - 20px);
+    }
+
+    .logo-container img {
+        max-width: 100%;
+    }
+
+    .secao4-div-card {
+        width: 100%;
+    }
+    
+}
+
+@media (min-width: 769px) {
+    /* Estilos para telas maiores */
+
+    .menu-icon {
+        display: none; /* Oculta o ícone do menu em telas maiores */
+    }
+
+    .nav-list {
+        display: flex;
+    }
+
+    .logo-container img {
+        border-radius: 8%;
+        max-width: 35em;
+        height: auto;
+    }
+}
+
+/* Estilos para telas maiores no formulário de contato */
+@media (min-width: 769px) {
+    .contact-section {
+        background-color: #fff;
+        padding: 40px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin: 40px auto;
+        max-width: 600px;
+    }
+
+    .contact-section h2 {
+        color: #000;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .field {
+        margin-bottom: 20px;
+    }
+
+    .label {
+        font-size: 18px;
+        color: #333;
+    }
+
+    .input,
+    .textarea {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .button.is-primary {
+        background-color: #000180;
+        color: #fff;
+        font-size: 18px;
+    }
+}
+
+/* Estilos para telas menores no formulário de contato */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 20px;
+    }
+
+    .contact-section h2 {
+        font-size: 24px;
+    }
+
+    .label {
+        font-size: 16px;
+    }
+
+    .input,
+    .textarea {
+        font-size: 14px;
+    }
+
+    .button.is-primary {
+        font-size: 16px;
+    }
+}
