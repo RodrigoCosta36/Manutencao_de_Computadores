@@ -3,6 +3,10 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const app = express();
 const port = 3000;
+const cors = require('cors');
+// ...
+
+app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -13,19 +17,29 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
+    },
+    tls: {
+        rejectUnauthorized: false // Aceita certificados autoassinados
     }
 });
 
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// Adicione esta linha para servir arquivos estáticos
+app.use(express.static("C:/Users/Rodri/OneDrive/Documentos/GitHub/Manutencao_de_Computadores/"));
+
+
 // Rota para processar o formulário
 app.post('/processar-formulario', (req, res) => {
-    console.log('Recebido POST em /processar-formulario', req.body);
+    console.log('Recebido POST em /processar-formulario');
 
     const { name, phone, email, whatsapp, message } = req.body;
 
     // Certifique-se de que a variável mailOptions está declarada dentro deste escopo
     const mailOptions = {
-        from: 'seu_email@gmail.com',
-        to: 'profissional@email.com',
+        from: 'rodrigofullbuster@outlook.com',
+        to: 'apkspro6@gmail.com',
         subject: `Nova mensagem de contato de ${name}`,
         text: `Nome: ${name}\nTelefone: ${phone}\nEmail: ${email}\nWhatsApp: ${whatsapp}\nMensagem:\n${message}`
     };
@@ -55,4 +69,9 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
+});
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Algo deu errado no servidor!');
 });

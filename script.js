@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
     checkVisibility();
 });
 
-
 // script.js
 
 function enviarFormulario(event) {
@@ -50,10 +49,16 @@ function enviarFormulario(event) {
     // Obtém os dados do formulário
     const formData = new FormData(form);
 
+    // Constrói a string de consulta a partir do objeto FormData
+    const queryString = new URLSearchParams(formData).toString();
+
     // Envia os dados para o servidor usando Fetch API
     fetch('/processar-formulario', {
         method: 'POST',
-        body: formData
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: queryString,
     })
     .then(response => response.text())
     .then(data => {
