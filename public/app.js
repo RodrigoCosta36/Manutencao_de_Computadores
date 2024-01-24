@@ -26,14 +26,18 @@ const transporter = nodemailer.createTransport({
 });
 
 // Configuração para servir arquivos estáticos
-app.use(express.static("C:/Users/Rodri/OneDrive/Documentos/GitHub/Manutencao_de_Computadores/"));
+app.use(express.static("C:/Users/Rodri/OneDrive/Documentos/GitHub/Manutencao_de_Computadores/public"));
 
 // Rota para processar o formulário
 app.post('/processar-formulario', (req, res) => {
     console.log('Recebido POST em /processar-formulario');
 
+    console.log('Recebido POST em /processar-formulario');
+
     // Extração dos dados do corpo da requisição
     const { name, phone, email, message } = req.body;
+
+    console.log('Dados do formulário:', { name, phone, email, message });
 
     // Configuração do objeto mailOptions com os dados do formulário
     const mailOptions = {
@@ -42,6 +46,8 @@ app.post('/processar-formulario', (req, res) => {
         subject: `Nova mensagem de contato de ${name}`,
         text: `Nome: ${name}\nTelefone: ${phone}\nEmail: ${email}\nMensagem:\n${message}`
     };
+
+    console.log('Enviando e-mail...');
 
     // Envio do e-mail utilizando o transporte do Nodemailer
     transporter.sendMail(mailOptions, (error, info) => {
