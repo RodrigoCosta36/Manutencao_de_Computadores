@@ -3,13 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const app = express();
-const port = 3000;
-const cors = require('cors');
+const port = process.env.PORT || 3000;  // Utilize a porta definida pelo ambiente do Netlify ou 3000
 
 // Configuração do middleware CORS para permitir requisições de diferentes origens
-app.use(cors());
-
-// Configuração do middleware para análise de corpos de requisição
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -25,18 +21,15 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// Configuração para servir arquivos estáticos
-app.use(express.static("C:/Users/Rodri/OneDrive/Documentos/GitHub/Manutencao_de_Computadores/public"));
+// Configuração para servir arquivos estáticos (assumindo que o build do Netlify está na pasta "public")
+app.use(express.static("public"));
 
 // Rota para processar o formulário
 app.post('/processar-formulario', (req, res) => {
     console.log('Recebido POST em /processar-formulario');
 
-    console.log('Recebido POST em /processar-formulario');
-
     // Extração dos dados do corpo da requisição
     const { name, phone, email, message } = req.body;
-
     console.log('Dados do formulário:', { name, phone, email, message });
 
     // Configuração do objeto mailOptions com os dados do formulário
