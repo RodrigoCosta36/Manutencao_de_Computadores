@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "netlifyDeploy",
+        "type": "shell",
+        "command": "netlify",
+        "args": ["deploy", "--prod"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+  

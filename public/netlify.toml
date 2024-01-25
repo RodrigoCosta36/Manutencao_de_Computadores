@@ -2,3 +2,8 @@
   from = "/enviarforms"
   to = "/enviarforms"
   status = 200
+
+
+[build]
+  publish = "dist"  # substitua "dist" pelo diretório de build do seu projeto
+  command = "npm run build"  # substitua pelo comando de build do seu projeto
