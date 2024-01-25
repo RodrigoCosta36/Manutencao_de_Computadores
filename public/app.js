@@ -22,7 +22,7 @@ const transporter = nodemailer.createTransport({
 
 app.use(express.static("public"));
 
-app.post('/enviarforms', (req, res) => {
+app.post('https://rodrigocosta36.netlify.app/enviarforms', (req, res) => {
     console.log('Recebido POST em /enviarforms');
 
     const { name, phone, email, message } = req.body;
