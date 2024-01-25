@@ -6,14 +6,14 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;  // Utilize a porta definida pelo ambiente do Netlify ou 3000
 
-const corsOptions = {
-    origin: 'https://rodrigocosta36.netlify.app', // Substitua pelo URL do seu site no Netlify
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-    optionsSuccessStatus: 204,
-};
+// const corsOptions = {
+//     origin: 'https://rodrigocosta36.netlify.app',
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     credentials: true,
+//     optionsSuccessStatus: 204,
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Configuração do middleware CORS para permitir requisições de diferentes origens
 app.use(bodyParser.urlencoded({ extended: true }));
