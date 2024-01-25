@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/enviarforms"
-  to = "/enviarforms"
+  from = "https://rodrigocosta36.netlify.app/enviarforms"
+  to = "https://rodrigocosta36.netlify.app/enviarforms"
   status = 200
 
 
