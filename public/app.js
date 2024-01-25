@@ -32,7 +32,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Configuração para servir arquivos estáticos (assumindo que o build do Netlify está na pasta "public")
-app.use(express.static("C:/Users/Rodri/OneDrive/Documentos/GitHub/Manutencao_de_Computadores/public"));
+app.use(express.static("public"));
 
 // Rota para processar o formulário
 app.post('/enviarforms', (req, res) => {
