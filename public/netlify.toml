@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/processar-formulario"
-  to = "/processar-formulario"
+  from = "/enviarforms"
+  to = "/enviarforms"
   status = 200

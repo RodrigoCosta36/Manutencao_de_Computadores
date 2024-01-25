@@ -64,7 +64,7 @@ function enviarFormulario(event) {
     const queryString = new URLSearchParams(formData).toString();
 
     // Envia os dados para o servidor usando Fetch API
-    fetch('/processar-formulario', {
+    fetch('/enviarforms', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

@@ -35,8 +35,8 @@ const transporter = nodemailer.createTransport({
 app.use(express.static("C:/Users/Rodri/OneDrive/Documentos/GitHub/Manutencao_de_Computadores/public"));
 
 // Rota para processar o formulário
-app.post('/processar-formulario', (req, res) => {
-    console.log('Recebido POST em /processar-formulario');
+app.post('/enviarforms', (req, res) => {
+    console.log('Recebido POST em /enviarforms');
 
     // Extração dos dados do corpo da requisição
     const { name, phone, email, message } = req.body;
