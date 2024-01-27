@@ -1,9 +1,0 @@
-[[redirects]]
-  from = "https://rodrigocosta36.netlify.app/enviarforms"
-  to = "https://rodrigocosta36.netlify.app/enviarforms"
-  status = 200
-
-
-[build]
-  publish = "dist"  # substitua "dist" pelo diretório de build do seu projeto
-  command = "npm run build"  # substitua pelo comando de build do seu projeto
