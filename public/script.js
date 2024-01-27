@@ -37,7 +37,7 @@ function enviarFormulario(event) {
     const formData = new FormData(form);
     const queryString = new URLSearchParams(formData).toString();
 
-    fetch('/', {  // Mantenha '/' para usar a funcionalidade de formulários do Netlify
+    fetch('/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -47,8 +47,15 @@ function enviarFormulario(event) {
     .then(response => response.text())
     .then(data => {
         if (data === 'success') {
-            form.style.display = 'none';
-            document.getElementById('confirmation-message').style.display = 'block';
+            // Exibe mensagem de confirmação
+            alert('Mensagem enviada com sucesso!');
+            
+            // Redireciona para a Home após 3 segundos
+            setTimeout(() => {
+                form.style.display = 'none';
+                document.getElementById('confirmation-message').style.display = 'block';
+                window.location.href = '/index.html'; // Redireciona para a Home
+            }, 3000);
         }
     })
     .catch(error => console.error('Erro:', error));
