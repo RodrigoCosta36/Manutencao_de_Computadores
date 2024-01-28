@@ -25,7 +25,7 @@ const transporter = nodemailer.createTransport({
 app.use(express.static("public"));
 
 // Rota para processar o formulário
-app.post("/processar-formulario", (req, res) => {
+app.post("https://rodrigocosta36.netlify.app/processar-formulario", (req, res) => {
   console.log("Recebido POST em /processar-formulario");
 
   // Extração dos dados do corpo da requisição
