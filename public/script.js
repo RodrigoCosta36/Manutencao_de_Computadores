@@ -64,7 +64,7 @@ function enviarFormulario(event) {
     const queryString = new URLSearchParams(formData).toString();
 
     // Envia os dados para o servidor usando Fetch API
-    fetch('/processar-formulario', {
+    fetch('/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -73,13 +73,18 @@ function enviarFormulario(event) {
     })
     .then(response => response.text())
     .then(data => {
-        // Exibe a mensagem de confirmação se o envio for bem-sucedido
         if (data === 'success') {
             form.style.display = 'none';
             document.getElementById('confirmation-message').style.display = 'block';
+        } else {
+            // Tratar caso 'data' não seja 'success'
+            console.error('Erro no lado do servidor:', data);
         }
     })
-    .catch(error => console.error('Erro:', error));
+    .catch(error => {
+        console.error('Erro na solicitação fetch:', error);
+        // Tratar erro de fetch
+    });
 }
 
 // Adiciona um ouvinte de evento para o envio do formulário
