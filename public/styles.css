@@ -10,7 +10,6 @@ body {
     font-size: 14px;
 }
 
-/* Nome fixo estilizado */
 .fixed-name {
     position: fixed;
     top: 0;
@@ -20,14 +19,13 @@ body {
     color: #ffffff;
     text-align: center;
     padding: 10px;
-    z-index: 1001; /* Ajustado para garantir que o nome esteja acima da navbar */
+    z-index: 1001; 
 }
 
 .fixed-name h2 {
     margin: 0;
 }
 
-/* Navbar estilizada */
 .navbar {
     background-color: #000180;
     color: #ffffff;
@@ -36,7 +34,7 @@ body {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 40px; /* Ajuste para garantir que a navbar não seja sobreposta pelo nome fixo */
+    top: 40px; 
     width: 100%;
     z-index: 1000;
 }
@@ -143,9 +141,9 @@ p {
 
 .secao4-div-card .valor {
     font-size: 24px;
-    color: #ff8000; /* Cor mais chamativa, você pode ajustar conforme preferir */
-    font-weight: bold; /* Deixa o texto em negrito para destaque */
-    margin-top: 5px; /* Espaço entre o título e o valor */
+    color: #ff8000;
+    font-weight: bold;
+    margin-top: 5px;
 }
 
 
@@ -218,17 +216,15 @@ p {
 }
 
 
-/* Media queries para layout responsivo */
 @media (max-width: 768px) {
-    /* Estilos para telas menores */
 
     body {
         font-family: 'Helvetica', sans-serif;
     }
 
     .nav-list {
-        display: none; /* Oculta a lista por padrão em telas maiores */
-        flex-direction: column; /* Ajusta a direção da lista para coluna */
+        display: none;
+        flex-direction: column;
         position: absolute;
         top: 60px;
         left: 0;
@@ -237,7 +233,7 @@ p {
     }
 
     .nav-list.show {
-        display: flex; /* Exibe a lista quando a classe show é aplicada */
+        display: flex;
     }
 
     .nav-list li {
@@ -275,25 +271,24 @@ p {
     }
 
     .card {
-        max-width: 100%; /* Ocupa a largura total em telas menores */
+        max-width: 100%;
     }
 
     .card .card-content .back,
     .card .card-content .front {
-        padding: 20px 30px; /* Ajusta o espaçamento interno em telas menores */
+        padding: 20px 30px;
     }
 
     .card .card-content .front button {
-        margin-top: 10px; /* Ajusta o espaçamento do botão em telas menores */
+        margin-top: 10px;
     }
     
 }
 
 @media (min-width: 769px) {
-    /* Estilos para telas maiores */
 
     .menu-icon {
-        display: none; /* Oculta o ícone do menu em telas maiores */
+        display: none;
     }
 
     .nav-list {
@@ -386,7 +381,6 @@ p {
     background: #fefefe;
     color: #000000;
     padding: 20px 40px;
-    /*   transform: translateY(180deg); */
     transform: rotateY(180deg);
     backface-visibility: hidden;
   }
